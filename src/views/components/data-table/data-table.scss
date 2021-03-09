@@ -1,0 +1,18 @@
+@import "../../../App.scss";
+
+.data-table {
+  overflow: auto;
+}
+
+.card-statistic {
+  min-height: 6rem;
+}
+
+.number-statistic {
+  font-size: 2rem;
+  color: $light;
+}
+
+.label-statistic {
+  color: white;
+}

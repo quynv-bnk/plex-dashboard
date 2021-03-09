@@ -1,0 +1,105 @@
+
+/*
+ =========================================================
+ * Black Dashboard React v1.2.0 based on Black Dashboard - v1.2.0
+ =========================================================
+
+ * Product Page: https://www.creative-tim.com/product/black-dashboard-react
+ * Copyright 2020 Creative Tim (https://www.creative-tim.com)
+ * Licensed under MIT (https://github.com/creativetimofficial/styles/blob/master/LICENSE.md)
+
+ * Coded by Creative Tim
+
+ =========================================================
+
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+ */
+
+ // Core
+
+@import "styles/custom/functions";
+@import "~bootstrap/scss/functions";
+
+@import "styles/custom/variables";
+@import "~bootstrap/scss/variables";
+
+@import "styles/custom/mixins";
+@import "~bootstrap/scss/mixins";
+
+ // Bootstrap components
+
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/code";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/input-group";
+@import "~bootstrap/scss/custom-forms";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/breadcrumb";
+@import "~bootstrap/scss/pagination";
+@import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/jumbotron";
+@import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/progress";
+@import "~bootstrap/scss/media";
+@import "~bootstrap/scss/list-group";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/tooltip";
+@import "~bootstrap/scss/popover";
+@import "~bootstrap/scss/carousel";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/print";
+
+ // Custom components
+
+ @import "styles/custom/alerts.scss";
+ @import "styles/custom/badges.scss";
+ @import "styles/custom/buttons.scss";
+ @import "styles/custom/dropdown.scss";
+ @import "styles/custom/footer.scss";
+ @import "styles/custom/forms.scss";
+ @import "styles/custom/images.scss";
+ @import "styles/custom/modal.scss";
+ @import "styles/custom/navbar.scss";
+ @import "styles/custom/type.scss";
+ @import "styles/custom/tables";
+ @import "styles/custom/checkboxes-radio";
+ @import "styles/custom/fixed-plugin";
+ @import "styles/custom/sidebar-and-main-panel.scss";
+ @import "styles/custom/misc.scss";
+ @import "styles/custom/rtl.scss";
+ @import "styles/custom/input-group.scss";
+
+
+ // Vendor / Plugins
+
+@import "styles/custom/vendor/plugin-perfect-scrollbar.scss";
+@import "styles/custom/vendor/plugin-react-notification-alert.scss";
+
+// light mode
+
+@import "styles/custom/white-content.scss";
+
+// Cards
+
+@import 'styles/custom/card';
+@import "styles/custom/cards/card-chart";
+@import "styles/custom/cards/card-map";
+@import "styles/custom/cards/card-user";
+@import "styles/custom/cards/card-task";
+@import "styles/custom/cards/card-plain";
+
+// React differences
+@import "styles/react-differences/react-differences";
