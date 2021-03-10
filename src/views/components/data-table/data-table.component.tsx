@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Button, Card, CardBody, CardFooter, Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Pagination, PaginationItem, PaginationLink, Row, Table, UncontrolledDropdown } from "reactstrap";
+import { Component } from "react";
+import { Card, CardBody, CardFooter, Col, DropdownItem, DropdownMenu, DropdownToggle, Pagination, PaginationItem, PaginationLink, Row, Table, UncontrolledDropdown } from "reactstrap";
 import { formatBytes } from "../../../utils/utils";
 import "./data-table.scss";
 import classNames from "classnames";
@@ -86,7 +86,7 @@ export class DataTable extends Component<IProps, IState> {
                     <td>{device.MODEL}</td>
                     <td>{device.IP}</td>
                     <td className="text-center">
-                        <span className={classNames([{"is-online": device.online}])}/>
+                        <span className={classNames([{ "is-online": device.online }])} />
                     </td>
                     <td className="text-right">{formatBytes(device.rx_bytes)}</td>
                     <td className="text-right">{formatBytes(device.tx_bytes)}</td>
