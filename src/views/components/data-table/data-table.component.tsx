@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Card, CardBody, CardFooter, Col, Pagination, PaginationItem, PaginationLink, Row, Table } from "reactstrap";
+import { Button, Card, CardBody, CardFooter, Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Pagination, PaginationItem, PaginationLink, Row, Table, UncontrolledDropdown } from "reactstrap";
 import { formatBytes } from "../../../utils/utils";
 import "./data-table.scss";
+import classNames from "classnames";
 
 export interface IDeviceInfo {
     "_id": number,
@@ -37,17 +38,12 @@ interface IProps {
         className?: string,
     }>,
     data: IDeviceInfo[],
-    itemsPerPage: number,
+    pageSizes: number[],
 }
 
-interface IState {
-    columns: Array<{
-        name: string,
-        className?: string,
-    }>,
-    data: IDeviceInfo[],
+interface IState extends IProps {
     currentPage: number;
-    itemsPerPage: number,
+    itemsPerPage: number;
 }
 
 export class DataTable extends Component<IProps, IState> {
@@ -56,8 +52,9 @@ export class DataTable extends Component<IProps, IState> {
         super(props);
         this.state = {
             data: props.data,
-            itemsPerPage: props.itemsPerPage,
+            pageSizes: props.pageSizes,
             currentPage: 1,
+            itemsPerPage: props.pageSizes[0] || 10,
             columns: props.columns,
         }
     }
@@ -69,7 +66,7 @@ export class DataTable extends Component<IProps, IState> {
     }
 
     render() {
-        const { data, columns, itemsPerPage, currentPage } = this.state;
+        const { data, columns, pageSizes, itemsPerPage, currentPage } = this.state;
         const totalDevicesCount = data.length;
         const onlineDevicesCount = data.filter((device) => device.online).length;
         const listSortedByUsage = data.slice().sort(
@@ -88,7 +85,9 @@ export class DataTable extends Component<IProps, IState> {
                     <td>{device.name}</td>
                     <td>{device.MODEL}</td>
                     <td>{device.IP}</td>
-                    <td>{device.online ? "true" : "false"}</td>
+                    <td className="text-center">
+                        <span className={classNames([{"is-online": device.online}])}/>
+                    </td>
                     <td className="text-right">{formatBytes(device.rx_bytes)}</td>
                     <td className="text-right">{formatBytes(device.tx_bytes)}</td>
                 </tr>
@@ -101,7 +100,7 @@ export class DataTable extends Component<IProps, IState> {
         }
         const renderPageNumbers = pageNumbers.map(number => {
             return (
-                <PaginationItem key={`page-${number}`}>
+                <PaginationItem active={currentPage === number} key={`page-${number}`}>
                     <PaginationLink href="#" onClick={(e) => this.handleClick(e, number)}>
                         {number}
                     </PaginationLink>
@@ -171,8 +170,25 @@ export class DataTable extends Component<IProps, IState> {
                             </tbody>
                         </Table>
                     </CardBody>
-                    <CardFooter>
-                        <Pagination size="sm" listClassName="justify-content-end">
+                    <CardFooter className="d-flex justify-content-between">
+                        <UncontrolledDropdown>
+                            <DropdownToggle caret size="sm" data-toggle="dropdown">
+                                {itemsPerPage}
+                            </DropdownToggle>
+                            <DropdownMenu>
+                                {pageSizes.map((pageSize) =>
+                                    <DropdownItem
+                                        active={pageSize === itemsPerPage}
+                                        onClick={() => this.setState({
+                                            itemsPerPage: pageSize,
+                                        })}
+                                    >
+                                        {pageSize}
+                                    </DropdownItem>
+                                )}
+                            </DropdownMenu>
+                        </UncontrolledDropdown>
+                        <Pagination>
                             <PaginationItem disabled={currentPage === 1}>
                                 <PaginationLink
                                     first

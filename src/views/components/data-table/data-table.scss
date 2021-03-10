@@ -16,3 +16,15 @@
 .label-statistic {
   color: white;
 }
+
+.online-indicator {
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+  display: inline-block;
+}
+
+.is-online {
+  @extend .online-indicator;
+  background-color: $component-active-bg;
+}

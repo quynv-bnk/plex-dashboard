@@ -350,7 +350,7 @@ $box-shadow-raised:        0px 10px 25px 0px rgba(0, 0, 0, 0.3);
 $box-shadow:               0 1px 20px 0px rgba(0, 0, 0, 0.1);
 $sidebar-box-shadow:       0px 2px 22px 0 rgba(0, 0, 0,.20), 0px 2px 30px 0 rgba(0, 0, 0,.35);
 
-$component-active-color:        $white !default;
+$component-active-color:        $dark !default;
 $component-active-bg:           theme-color("primary") !default;
 $component-active-border-color: theme-color("primary") !default;
 
@@ -864,7 +864,7 @@ $pagination-padding-y:                0 !default;
 $pagination-padding-x:                .6875rem !default;
 
 
-$pagination-color:                  $white !default;
+$pagination-color:                  $light !default;
 $pagination-bg:                     transparent  !default;
 $pagination-border-width:           $border-width !default;
 $pagination-border-color:           $gray-300 !default;

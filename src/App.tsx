@@ -14,10 +14,10 @@ export class App extends Component {
           <DataTable
             columns={[
               {name: "Name"}, {name: "Model"}, {name: "IP"},
-              {name: "Online"}, {name: "Rx volume", className: "text-right"}, {name: "Tx volume", className: "text-right"},
+              {name: "Online", className: "text-center"}, {name: "Rx volume", className: "text-right"}, {name: "Tx volume", className: "text-right"},
             ]}
             data={deviceList}
-            itemsPerPage={10}
+            pageSizes={[10, 15, 20]}
           />
         </div>
       </>
